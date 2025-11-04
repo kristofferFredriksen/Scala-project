@@ -1,4 +1,5 @@
 import collection.mutable.Map
+import java.util.UUID
 
 class Bank(val allowedAttempts: Integer = 3) {
 
@@ -46,40 +47,21 @@ class Bank(val allowedAttempts: Integer = 3) {
         }
     }
 
-    private def processSingleTransaction(t: Transaction): Thread = {
-        val worker = new Runnable {
-            override def run(): Unit = {
-                var attemptsLeft = allowedAttempts
-                var completed = false
-
-                while (!completed && attemptsLeft > 0) {
-                    val success = Bank.this.synchronized {
-                        (accountsRegistry.get(t.from), accountsRegistry.get(t.to)) match {
-                            case (Some(fromAccount), Some(toAccount)) if t.amount > 0 && fromAccount.balance >= t.amount =>
-                                accountsRegistry.update(t.from, new Account(fromAccount.code, fromAccount.balance - t.amount))
-                                accountsRegistry.update(t.to, new Account(toAccount.code, toAccount.balance + t.amount))
-                                true
-                            case _ => false
-                        }
-                    }
-
-                    if (success) {
-                        completed = true
-                    } else {
-                        attemptsLeft -= 1
-                    }
-                }
-            }
-        }
-
-        new Thread(worker)
-    }
+    // TODO
+    // The function creates a new thread ready to process
+    // the transaction, and returns it as a return value
+    private def processSingleTransaction(t : Transaction) : Thread =  ???
 
 
     // TODO
     // Creates a new account and returns its code to the user.
     // The account is stored in the local registry of bank accounts.
-    def createAccount(initialBalance: Double) : String = ???
+    def createAccount(initialBalance: Double) : String = {
+        val code = UUID.randomUUID().toString
+        val account = new Account(code, initialBalance)
+        accountsRegistry += (code -> account)
+        code
+    }
 
 
     // TODO
