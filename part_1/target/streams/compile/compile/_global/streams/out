@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/kristofferfredriksen/Downloads/NTNU/7.Semester/TDT4165_PROG/project/scala_project_2025/part_1/ConcurrencyTroublesAtomic.scala:16:14 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m16 |[0m      [33mval[0m [36ms[0m = state.get()[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m              ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m              Not found: state[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/kristofferfredriksen/Downloads/NTNU/7.Semester/TDT4165_PROG/project/scala_project_2025/part_1/ConcurrencyTroublesAtomic.scala:18:13 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m18 |[0m      done = state.compareAndSet(s, next)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m             ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m             Not found: state[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

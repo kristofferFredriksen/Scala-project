@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E040] Syntax Error: /Users/kristofferfredriksen/Downloads/NTNU/7.Semester/TDT4165_PROG/project/scala_project_2025/ConcurrencyTroubles.scala:42:1 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m42 |[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m '}' expected, but eof found[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- Warning: /Users/kristofferfredriksen/Downloads/NTNU/7.Semester/TDT4165_PROG/project/scala_project_2025/ConcurrencyTroubles.scala:29:2 [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m29 |[0m  [33mdef[0m [36mmain[0m([36margs[0m: [35mArray[0m[[35mString[0m]): [35mUnit[0m = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m   |[0m  ^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m  Line is indented too far to the left, or a `}` is missing[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
