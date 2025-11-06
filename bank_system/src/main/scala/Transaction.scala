@@ -9,7 +9,7 @@ class TransactionPool {
 
      // Remove and the transaction from the pool
     def remove(t: Transaction): Boolean = lock.synchronized {
-      pool.dequeueFirst(X => x == t)
+      pool.dequeueFirst(x => x == t).isDefined
     }
 
     // Return whether the queue is empty
@@ -39,8 +39,23 @@ class Transaction(val from: String,
   private var status: TransactionStatus.Value = TransactionStatus.PENDING
   private var attempts = 0
 
-  def getStatus() = status
+  def getStatus(): TransactionStatus.Value = status
+  def getAttempts(): Int = attempts
+  def canRetry(): Boolean = attempts < retries
+  
+  def markSuccess(): Unit = {
+      status = TransactionStatus.SUCCESS
+  }
 
-  // TODO: Implement methods that change the status of the transaction
+  def markFailed(): Unit = {
+      status = TransactionStatus.FAILED
+  }
+  
+  def markPending(): Unit = {
+      status = TransactionStatus.PENDING
+  }
 
+  def incrementAttempts(): Unit = {
+      attempts += 1
+  }
 }
